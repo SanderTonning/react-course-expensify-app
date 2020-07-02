@@ -13,20 +13,20 @@ const config = {
 
       const database = firebase.database();
       
-      // child_removed, only fires when a child is removed.
-      database.ref('expenses').on('child_removed', (snapshot) => {
-        console.log(snapshot.key, snapshot.val())
-      });
+      // // child_removed, only fires when a child is removed.
+      // database.ref('expenses').on('child_removed', (snapshot) => {
+      //   console.log(snapshot.key, snapshot.val())
+      // });
 
-      // child_changed, only fires when child is changed.
-      database.ref('expenses').on('child_changed', (snapshot) => {
-        console.log(snapshot.key, snapshot.val())
-      });
+      // // child_changed, only fires when child is changed.
+      // database.ref('expenses').on('child_changed', (snapshot) => {
+      //   console.log(snapshot.key, snapshot.val())
+      // });
       
-      // child_added, fires on current db entries and the added childs.
-      database.ref('expenses').on('child_added', (snapshot) => {
-        console.log(snapshot.key, snapshot.val())
-      });
+      // // child_added, fires on current db entries and the added childs.
+      // database.ref('expenses').on('child_added', (snapshot) => {
+      //   console.log(snapshot.key, snapshot.val())
+      // });
 
       
       export { firebase, database as default };

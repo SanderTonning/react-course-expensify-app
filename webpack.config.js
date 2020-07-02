@@ -1,9 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPluging = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-// process.env.NODE_ENV
 
 if (process.env.NODE_ENV === 'test') {
   require('dotenv').config({ path: '.env.test' });
@@ -13,7 +12,7 @@ if (process.env.NODE_ENV === 'test') {
 
 module.exports = (env) => {
   const isProduction = env === 'production';
-  const CSSExtract = new ExtractTextPluging('styles.css');
+  const CSSExtract = new ExtractTextPlugin('styles.css');
   
   return {
       entry: './src/app.js',
