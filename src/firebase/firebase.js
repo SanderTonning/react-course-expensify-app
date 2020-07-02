@@ -1,15 +1,14 @@
 import * as firebase from 'firebase';
 
 const config = {
-        apiKey: "AIzaSyA0kbciEZL0ArNxNHdMfq0QHAjdqJFj7Gc",
-        authDomain: "expensify-8af5d.firebaseapp.com",
-        databaseURL: "https://expensify-8af5d.firebaseio.com",
-        projectId: "expensify-8af5d",
-        storageBucket: "expensify-8af5d.appspot.com",
-        messagingSenderId: "876266199336",
-        appId: "1:876266199336:web:8643377221f7658d62181d",
-        measurementId: "G-2SV4NCRW93"
+        apiKey: process.env.FIREBASE_API_KEY,
+        authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+        databaseURL: process.env.FIREBASE_DATABASE_URL,
+        projectId: process.env.FIREBASE_PROJECT_ID,
+        storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+        messagingSenderId: process.env.FIREBASE_MESSAGE_SENDER_ID
       };
+
       firebase.initializeApp(config)
 
       const database = firebase.database();
@@ -30,6 +29,9 @@ const config = {
       });
 
       
+      export { firebase, database as default };
+
+
       // database.ref('expenses').on('value', (snapshot) => {
       // const expenses = [];
       
