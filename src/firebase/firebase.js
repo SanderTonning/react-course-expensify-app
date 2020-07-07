@@ -12,6 +12,7 @@ const config = {
       firebase.initializeApp(config)
 
       const database = firebase.database();
+      const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
       
       // // child_removed, only fires when a child is removed.
       // database.ref('expenses').on('child_removed', (snapshot) => {
@@ -29,7 +30,7 @@ const config = {
       // });
 
       
-      export { firebase, database as default };
+      export { firebase, googleAuthProvider, database as default };
 
 
       // database.ref('expenses').on('value', (snapshot) => {
