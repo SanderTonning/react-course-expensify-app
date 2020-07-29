@@ -16,14 +16,14 @@ export class ExpenseListFilters extends React.Component {
   }
   onTextChange = (e) => {
     this.props.setTextFilter(e.target.value);
-  }
+  };
   onSortChange = (e) => {
     if (e.target.value === 'date') {
       this.props.sortByDate();
     } else if (e.target.value === 'amount') {
       this.props.sortByAmount();
     }
-  }
+  };
   render() {
     return (
       <div className="content-container">
@@ -68,7 +68,6 @@ export class ExpenseListFilters extends React.Component {
 const mapStateToProps = (state) => ({
   filters: state.filters
 });
-
 
 const mapDispatchToProps = (dispatch) => ({
   setTextFilter: (text) => dispatch(setTextFilter(text)),

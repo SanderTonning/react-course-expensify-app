@@ -17,10 +17,10 @@ export class AddExpensePage extends React.Component {
           </div>
         </div>
         <div className="content-container">
-        <ExpenseForm
-          onSubmit={this.onSubmit}
-        />
-        </div>  
+          <ExpenseForm
+            onSubmit={this.onSubmit}
+          />
+        </div>
       </div>
     );
   }
@@ -28,6 +28,6 @@ export class AddExpensePage extends React.Component {
 
 const mapDispatchToProps = (dispatch) => ({
   startAddExpense: (expense) => dispatch(startAddExpense(expense))
-})
+});
 
 export default connect(undefined, mapDispatchToProps)(AddExpensePage);
